@@ -1,5 +1,7 @@
 $(document).ready(function(){
-    
+  datos_gestion();
+  datos_lead();
+  datos_oportunidad();
     function datos_gestion(){
         let id = $('#id').val();
         $.ajax({
@@ -31,21 +33,20 @@ $(document).ready(function(){
             data: {id},
             success: function(resultado){
                 $('#datos-oportunidad').html(resultado);
+
             }
         });
     }
 
-    datos_gestion();
-    datos_lead();
-    datos_oportunidad();
 
-    
+
+
     $('#guardar_nota').click(function(){
-            
+
         var notas = $('#nota').val();
         var id_cliente = $('#id').val();
         var nombre_usuario = $('#nombre_usuario').val();
-       
+
         $.ajax({
             url: "sql/insert-notas.php",
             data: {notas, id_cliente, nombre_usuario},
@@ -56,7 +57,7 @@ $(document).ready(function(){
                     datos_gestion();
                     console.log("se ejecuto");
             }
-        });  
+        });
     });
 
     $('#guardar_oportunidad').click(function(){
@@ -70,10 +71,11 @@ $(document).ready(function(){
             type: "POST",
             data: {nombre_usuario, id_cliente, valor, tipo, fecha},
             success: function(e){
-                
+
                 $('#valor-oportunidad').val(" ");
-                
+
                 $('#fecha-oportunidad').val(" ");
+                datos_oportunidad();
             }
         });
 
@@ -98,12 +100,17 @@ $(document).ready(function(){
 
     });
 
+
     $('#editar-oportunidad3').click(function(){
         let valor = $('#valor').val();
         let fecha = $('#fecha').val();
         console.log(fecha);
         console.log(valor);
         console.log("hola");
+    });
+
+    $('#btn-editar').click(function(){
+      console.log('hola');
     });
 
 });

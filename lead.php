@@ -1,7 +1,8 @@
 <?php
-//conexion 
+//conexion
 
-include("sql/extraccion.php");
+include("function.php");
+include("sql/conexion.php");
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +23,7 @@ include("sql/extraccion.php");
         <link href="plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
         <link href="plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
         <!-- Responsive datatable examples -->
-        <link href="plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" /> 
+        <link href="plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
         <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -52,11 +53,11 @@ include("sql/extraccion.php");
             <!--end logo-->
             <?php include('menu.php'); ?>
              <!-- end left-sidenav-->
-        
+
 
         <div class="page-wrapper">
             <!-- Top Bar Start -->
-            <div class="topbar">            
+            <div class="topbar">
                 <!-- Navbar -->
                 <?php //include('head.php'); ?>
                 <!-- end navbar-->
@@ -88,14 +89,14 @@ include("sql/extraccion.php");
                                         <a href="#" class="btn btn-sm btn-outline-primary">
                                             <i data-feather="download" class="align-self-center icon-xs"></i>
                                         </a>
-                                    </div><!--end col-->  
-                                </div><!--end row-->                                                              
+                                    </div><!--end col-->
+                                </div><!--end row-->
                             </div><!--end page-title-box-->
                         </div><!--end col-->
                     </div><!--end row-->
                     <!-- end page title end breadcrumb -->
-                  
-    
+
+
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
@@ -107,7 +108,7 @@ include("sql/extraccion.php");
                                         provides the based framework upon which plug-ins can built.
                                     </p>
                                 </div><!--end card-header-->
-                                <div class="card-body">  
+                                <div class="card-body">
                                     <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                         <tr>
@@ -119,15 +120,15 @@ include("sql/extraccion.php");
                                             <th>Creado Por </th>
                                         </tr>
                                         </thead>
-    
-    
+
+
                                         <tbody>
                                             <?php
 
-                                            extraccion_lead();
+                                            extraccion_lead($conn);
                                             ?>
                                         </tbody>
-                                    </table>        
+                                    </table>
                                 </div>
                             </div>
                         </div> <!-- end col -->
@@ -141,7 +142,7 @@ include("sql/extraccion.php");
         </div>
         <!-- end page-wrapper -->
 
-        
+
 
 
         <!-- jQuery  -->
@@ -174,7 +175,7 @@ include("sql/extraccion.php");
 
         <!-- App js -->
         <script src="assets/js/app.js"></script>
-        
+
     </body>
 
 </html>

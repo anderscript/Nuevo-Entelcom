@@ -34,12 +34,13 @@ $resultado_gestiones = $conn -> query($extraccion_gestiones);
                 <div class="col-auto">
                     <span class="text-muted"><i class="far fa-clock mr-1"></i><?php echo $perdomo_gestiones['fecha']; ?></span>
                 </div><!--end col-->
-            </div><!--end row-->                                                                
+            </div><!--end row-->
             <p><?php echo $perdomo_gestiones['comentario']; ?>
             </p>
-            <a href="#" class="text-primary"><i class="fas fa-reply mr-1"></i>Editar</a>
+            <button class="btn btn-primary" id="btn-editar"><i class="fas fa-reply mr-1"></i>Editar</button>
         </div>
     </div><!--end col-->
 </div><!--end row-->
 <br>
+
 <?php } ?>
