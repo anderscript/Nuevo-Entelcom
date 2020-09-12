@@ -66,5 +66,24 @@ function edicionComentarios($id, $conn){
 
 }
 
+function editarGestiones($conn, $id, $idCliente) {
+
+  $extraccion_gestion = "SELECT comentario from notas_gestiones where id = '$id'";
+
+  $resultado_gestion = $conn -> query($extraccion_gestion);
+
+  $perdomoGestion = $resultado_gestion ->fetch_assoc();
+  echo "<textarea class='form-control' name='valor' id='nota' rows='5' id='leave_comment' placeholder='El cliente me indica pago para el día...'>".$perdomoGestion['comentario']."</textarea>
+        <input type='hidden' name='id' value='$id'>
+        <input type='hidden' name='idCliente' value='$idCliente'>
+        ";
+}
+
+function sesionesLogueo(){
+  include('sql/variables-usuarios.php');
+}
+
+
+
 
 ?>

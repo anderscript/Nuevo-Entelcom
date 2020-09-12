@@ -37,7 +37,7 @@ $resultado_gestiones = $conn -> query($extraccion_gestiones);
             </div><!--end row-->
             <p><?php echo $perdomo_gestiones['comentario']; ?>
             </p>
-            <button class="btn btn-primary" id="btn-editar"><i class="fas fa-reply mr-1"></i>Editar</button>
+            <a class="btn btn-primary" id="btn-editar" href="editar-gestiones.php?id=<?php echo $perdomo_gestiones['id']; ?>&idCliente=<?php echo $perdomo['id_cliente']; ?>"><i class="fas fa-reply mr-1"></i>Editar</a>
         </div>
     </div><!--end col-->
 </div><!--end row-->
