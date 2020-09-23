@@ -13,14 +13,14 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-        <link href="../plugins/summernote/summernote-bs4.css" rel="stylesheet" />
+        <link href="plugins/summernote/summernote-bs4.css" rel="stylesheet" />
 
         <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/jquery-ui.min.css" rel="stylesheet">
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
-        <link href="../plugins/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
+        <link href="plugins/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
 
     </head>
@@ -400,7 +400,7 @@
                             <div class="page-title-box">
                                 <div class="row">
                                     <div class="col">
-                                        <h4 class="page-title">Inbox</h4>
+                                        <h4 class="page-title">Bandeja</h4>
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item"><a href="javascript:void(0);">Dastyle</a></li>
                                             <li class="breadcrumb-item"><a href="javascript:void(0);">Apps</a></li>
@@ -428,7 +428,7 @@
                             <!-- Left sidebar -->
                             <div class="email-leftbar">
                                 <button type="button" class="btn btn-primary btn-round btn-custom btn-block waves-effect waves-light" data-toggle="modal" data-animation="bounce" data-target=".compose-modal">
-                                    <i class="fas fa-feather-alt mr-2"></i>Compose
+                                    <i class="fas fa-feather-alt mr-2"></i>Crear Email
                                 </button>
 
                                 <div class="card mt-3">
@@ -885,6 +885,7 @@
                 </div><!-- container -->
 
                 <!-- Modal -->
+                <form action="sql/generador-correo.php" method="post" >
                 <div class="modal fade compose-modal" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
@@ -898,46 +899,31 @@
                                 <div class="card mb-0 p-3">
                                     <form>
                                         <div class="form-group mb-3">
-                                            <input type="email" class="form-control" placeholder="To">
+                                            <input type="email" name="correo"class="form-control" placeholder="Para">
                                         </div><!--end form-group-->
                                         <div class="form-group mb-3">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <input type="email" class="form-control" placeholder="Cc">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <input type="email" class="form-control" placeholder="Bcc">
+                                                    <input type="email" name="correocc" class="form-control" placeholder="Cc">
                                                 </div>
                                             </div>
                                         </div><!--end form-group-->
                                         <div class="form-group mb-3">
-                                            <input type="text" class="form-control" placeholder="Subject">
+                                            <input type="text" class="form-control" name="asunto" placeholder="Asunto">
                                         </div><!--end form-group-->
                                         <div class="form-group mb-3">
-                                            <div class="summernote">
-                                                <h6>Hello Summernote</h6>
-                                                <ul>
-                                                    <li>
-                                                        Select a text to reveal the toolbar.
-                                                    </li>
-                                                    <li>
-                                                        Edit rich document on-the-fly, so elastic!
-                                                    </li>
-                                                </ul>
-                                                <p>
-                                                    End of air-mode area
-                                                </p>
+                                            <textarea name="mensaje" class="summernote">
 
-                                            </div>
+
+
+                                            </textarea>
                                         </div><!--end form-group-->
 
                                         <div class="btn-toolbar form-group mb-0">
                                             <div class="pull-right">
-                                                <button type="button" class="btn btn-info waves-effect waves-light"><span>Print</span><i
-                                                        class="far fa-save ml-3"></i></button>
-                                                <button class="btn btn-primary waves-effect waves-light"><span>Send</span> <i
+                                                <button class="btn btn-primary waves-effect waves-light"><span>Enviar</span> <i
                                                     class="far fa-paper-plane ml-3"></i></button>
-                                                <button type="button" class="btn btn-danger waves-effect waves-light "><span>Delete</span><i
+                                                <button type="button" class="btn btn-danger waves-effect waves-light "><span>Cancelar</span><i
                                                         class="far fa-trash-alt ml-3"></i></button>
                                             </div>
                                         </div><!--end form-group-->
@@ -968,9 +954,9 @@
         <script src="assets/js/simplebar.min.js"></script>
         <script src="assets/js/jquery-ui.min.js"></script>
         <script src="assets/js/moment.js"></script>
-        <script src="../plugins/daterangepicker/daterangepicker.js"></script>
+        <script src="plugins/daterangepicker/daterangepicker.js"></script>
 
-        <script src="../plugins/summernote/summernote-bs4.min.js"></script>
+        <script src="plugins/summernote/summernote-bs4.min.js"></script>
 
         <!-- App js -->
         <script src="assets/js/app.js"></script>

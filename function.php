@@ -1,5 +1,10 @@
 <?php
+function sesion($nombre) {
 
+  if (!isset($nombre)){
+    header("LOCATION: login.html");
+  }
+}
 
 function total_lead($conn){
 

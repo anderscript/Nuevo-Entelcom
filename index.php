@@ -2,6 +2,7 @@
 include('sql/variables-usuarios.php');
 include('sql/conexion.php');
 include('function.php');
+sesion($nombre);
 ?>
 
 <!DOCTYPE html>
