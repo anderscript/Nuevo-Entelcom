@@ -5,9 +5,8 @@ $mensaje = $_POST['mensaje'];
 $asunto = $_POST['asunto'];
 
 if (!empty($correo) && !empty($mensaje) && !empty($asunto)){
-  $header = "FROM: noreply@example.com"."\r\n";
-  $header .="Reply-To: noreply@example.com"."\r\n";
-  $header .= "X-Mailer: PHP/". phpversion();
+  $header = "Esto es enviado des entelcom";
+
   $mail = mail($correo, $asunto, $mensaje, $header);
 
   if($mail){
